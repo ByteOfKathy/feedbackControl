@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/kc0813/Desktop/feedback control book/tutorial-env/bin/python3" "$0" "$@"
+'''exec' "/home/kc0813/Desktop/feedback control book/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
