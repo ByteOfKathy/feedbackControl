@@ -26,3 +26,25 @@ def work(self, u):
     self.queued -= r
 
     return self.queued
+
+class Controller:
+    def __init__(self, kp, ki):
+        self.kp, self.ki = kp, ki
+        self.i = 0 # integral aka cumulative error
+
+    def work(self, e):
+        self.i += e
+        return self.kp*e + self.ki*self.i
+
+def open_loop(p, tm=5000):
+    def target(t):
+        return 5.0
+
+    for t in range(tm):
+        u = target(t)
+        y = p.work(u)
+
+        print t, u, 0, u, y
+
+def closed_loop(c, p, tm=5000):
+    def setpoint()
